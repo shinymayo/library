@@ -1,0 +1,67 @@
+/* font */
+* {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+@media screen and (max-width: 600px) {
+    /* this is a test property */
+    body {
+        background-color: red;
+    }
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 7fr;
+    height: 100vh;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    grid-row: 1 / 2;
+    border: 1px dotted blue;
+}
+#add-btn {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 1rem;
+    background-color: rgb(68, 216, 134);
+    border-radius: 5px;
+    border: 1px solid rgb(68, 216, 134);
+    padding: 10px 18px;
+}
+#add-btn:hover {
+    border: 1px solid rgb(57, 183, 113);
+    background-color: rgba(68, 216, 134, 0.8);
+}
+.main {
+    background-color: rgb(106, 228, 122);
+    border: 1px solid red;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 20px;
+}
+.card {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(212, 208, 208);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+}
+#remove-btn {
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    font-size: 0.8rem;
+    background-color: rgb(241, 66, 89);
+    border-radius: 5px;
+    border: 1px solid rgb(241, 66, 89);
+    padding: 10px 18px;
+}
+#remove-btn:hover {
+    border: 1px solid rgb(210, 55, 76);
+    background-color: rgba(241, 66, 89, 0.8);
+}
