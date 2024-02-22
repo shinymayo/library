@@ -25,19 +25,20 @@ body {
 }
 #add-btn {
     color: rgb(255, 255, 255);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 1rem;
     background-color: rgb(68, 216, 134);
     border-radius: 5px;
     border: 1px solid rgb(68, 216, 134);
     padding: 10px 18px;
 }
-#add-btn:hover {
+#add-btn:hover,
+#status-btn:hover {
     border: 1px solid rgb(57, 183, 113);
     background-color: rgba(68, 216, 134, 0.8);
 }
 .main {
-    background-color: rgb(106, 228, 122);
+    background-color: rgb(199, 239, 204);
     border: 1px solid red;
     grid-row: 2 / 3;
     display: grid;
@@ -51,18 +52,38 @@ body {
     border: 1px solid rgb(212, 208, 208);
     border-radius: 5px;
     margin: 10px;
-    padding: 5px;
+    padding: 15px;
 }
 #remove-btn {
     color: rgb(255, 255, 255);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.8rem;
     background-color: rgb(241, 66, 89);
     border-radius: 5px;
     border: 1px solid rgb(241, 66, 89);
     padding: 10px 18px;
+    margin: 25px 0 0 0;
 }
 #remove-btn:hover {
     border: 1px solid rgb(210, 55, 76);
     background-color: rgba(241, 66, 89, 0.8);
+}
+#status-btn {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 0.8rem; 
+    background-color: rgb(68, 216, 134);
+    border-radius: 5px;
+    border: 1px solid rgb(68, 216, 134);
+    padding: 10px 18px;
+    margin: 25px 0 0 0;
+}
+p.book-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px 0;
+}
+.book-author,
+.book-pages {
+    padding: 8px 0;
 }
