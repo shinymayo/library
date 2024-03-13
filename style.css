@@ -87,3 +87,16 @@ body {
 .book-pages {
     padding: 8px 0;
 }
+.dialog-box {
+    margin: auto;
+    width: 60vw;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/*  When you set display to flex/grid it overrides dialog's default style;
+so this extra line before is needed to make sure it is working as needed */
+.dialog-box:not([open]){
+  display:none;
+}

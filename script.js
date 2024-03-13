@@ -1,4 +1,7 @@
 const libraryDisplay = document.querySelector(".main");
+const addNewBook = document.querySelector("#add-btn");
+const dialogBox = document.querySelector("dialog");
+const submitBtn = document.querySelector(".dialog-submit-btn");
 // book constructor
 function Book(title, author, pages, isRead) {
     this.title = title;
@@ -55,10 +58,19 @@ function displayBooks(array) {
 
     }
 }
+
+// test the functions
 addBooktoLibrary(theHobbit);
 addBooktoLibrary(darkTower);
 displayBooks(library);
 
+// add new book button function
+addNewBook.addEventListener("click", () => {
+    dialogBox.show();
+})
+submitBtn.addEventListener("click", () => {
+    dialogBox.close();
+})
 // create function for remove button
 
 
