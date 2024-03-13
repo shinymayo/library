@@ -23,7 +23,8 @@ body {
     grid-row: 1 / 2;
     /* border: 1px dotted blue; */
 }
-#add-btn {
+#add-btn,
+.dialog-submit-btn {
     color: rgb(255, 255, 255);
     font-weight: 700;
     font-size: 1rem;
@@ -33,7 +34,8 @@ body {
     padding: 10px 18px;
 }
 #add-btn:hover,
-#status-btn:hover {
+#status-btn:hover,
+.dialog-submit-btn {
     border: 1px solid rgb(57, 183, 113);
     background-color: rgba(68, 216, 134, 0.8);
 }
@@ -94,9 +96,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+.dialog-box > div {
+    padding: 3px 0;
+    width: 20vw;
 }
 /*  When you set display to flex/grid it overrides dialog's default style;
 so this extra line before is needed to make sure it is working as needed */
 .dialog-box:not([open]){
   display:none;
+}
+.input-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.dialog-name {
+    font-weight: 700;
+    font-size: 1.2rem;
 }
