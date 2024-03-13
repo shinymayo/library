@@ -21,7 +21,7 @@ body {
     justify-content: space-around;
     align-items: center;
     grid-row: 1 / 2;
-    border: 1px dotted blue;
+    /* border: 1px dotted blue; */
 }
 #add-btn {
     color: rgb(255, 255, 255);
@@ -39,7 +39,7 @@ body {
 }
 .main {
     background-color: rgb(199, 239, 204);
-    border: 1px solid red;
+    /* border: 1px solid red; */
     grid-row: 2 / 3;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
