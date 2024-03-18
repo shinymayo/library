@@ -3,7 +3,7 @@ const addNewBook = document.querySelector("#add-btn");
 const dialogBox = document.querySelector("dialog");
 const submitBtn = document.querySelector(".dialog-submit-btn");
 // book constructor
-function Book(title, author, pages, isRead) {
+function Book(title, author, pages,) {
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -12,11 +12,10 @@ function Book(title, author, pages, isRead) {
 
 // create default books
 const theHobbit = new Book("The Hobbit", "J.R.R.Tolkien", 310);
-const deathlyHallows = new Book("Harry Potter and the Deathly Hallows", "J.K.Rowling", 784);
-
 const darkTower = new Book("The Dark Tower", "Stephen King", 224);
+
 // create library array, with default books inside
-const library = [deathlyHallows];
+const library = [];
 
 // function to add books
 function addBooktoLibrary(item) {
@@ -42,7 +41,7 @@ function displayBooks(array) {
 
         const bookPagesNum = document.createElement("p");
         bookPagesNum.classList.add("book-pages");
-        bookPagesNum.textContent = item.pages;
+        bookPagesNum.textContent =`${item.pages} pages`;
 
         const removeButton = document.createElement("button");
         removeButton.setAttribute("id", "remove-btn");
@@ -67,10 +66,18 @@ displayBooks(library);
 // add new book button function
 addNewBook.addEventListener("click", () => {
     dialogBox.show();
+    // submitBook();
 })
 submitBtn.addEventListener("click", () => {
     dialogBox.close();
+    //not sure if this is needed
+    preventDefault();
 })
+// function to upload the book onto the card
+function submitBook() {
+
+}
+
 // create function for remove button
 
 
