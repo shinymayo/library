@@ -17,7 +17,7 @@ const darkTower = new Book("The Dark Tower", "Stephen King", 224);
 // create library array, with default books inside
 const library = [];
 
-// function to add books
+// function to add books array
 function addBooktoLibrary(item) {
     library.push(item);
 }
@@ -58,24 +58,29 @@ function displayBooks(array) {
     }
 }
 
-// test the functions
-addBooktoLibrary(theHobbit);
-addBooktoLibrary(darkTower);
-displayBooks(library);
-
 // add new book button function
 addNewBook.addEventListener("click", () => {
     dialogBox.show();
     // submitBook();
 })
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (event) => {
     dialogBox.close();
     //not sure if this is needed
-    preventDefault();
+    event.preventDefault();
+    //
+    submitBook();
 })
 // function to upload the book onto the card
 function submitBook() {
-
+    // gather info
+    let title = document.getElementById("title").value;
+    let author = document.getElementById("author").value;
+    let pages = document.getElementById("pages").value;
+    // pass through constructor
+    let book = new Book(title, author, pages);
+    addBooktoLibrary(book);
+    displayBooks(library);
+    console.log(library);
 }
 
 // create function for remove button
