@@ -2,23 +2,38 @@ const libraryDisplay = document.querySelector(".main");
 const addNewBook = document.querySelector("#add-btn");
 const dialogBox = document.querySelector("dialog");
 const submitBtn = document.querySelector(".dialog-submit-btn");
+// for the card elements
+let bookCard;
+let bookTitle;
+let bookAuthor;
+let bookPagesNum;
+let readStatus;
+let removeButton;
+let statusButton;
+
 // book constructor
-function Book(title, author, pages,) {
+function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
-    // this.isRead = isRead;
+    this.read = read;
 }
 
-// create default books
-const theHobbit = new Book("The Hobbit", "J.R.R.Tolkien", 310);
-const darkTower = new Book("The Dark Tower", "Stephen King", 224);
+// create function for changing status button
+Book.prototype.changeRead = function() {
+    this.read = !this.read;
+}
+function changeRead(index) {
+    library[index].changeRead();
+    displayBooks();
+}
 
 // create library array, with default books inside
 const library = [];
 
 // function to add books array
 function addBooktoLibrary(item) {
+    
     library.push(item);
 }
 
@@ -28,28 +43,32 @@ function displayBooks(array) {
         // check its in the array
         console.log(item.title);
         // create card
-        const bookCard = document.createElement("div");
+        bookCard = document.createElement("div");
         bookCard.classList.add("card");
         // create parts of the card
-        const bookTitle = document.createElement("p");
+        bookTitle = document.createElement("p");
         bookTitle.classList.add("book-title");
         bookTitle.textContent = item.title;
 
-        const bookAuthor = document.createElement("p");
+        bookAuthor = document.createElement("p");
         bookAuthor.classList.add("book-author");
         bookAuthor.textContent = item.author;
 
-        const bookPagesNum = document.createElement("p");
+        bookPagesNum = document.createElement("p");
         bookPagesNum.classList.add("book-pages");
         bookPagesNum.textContent =`${item.pages} pages`;
 
-        const removeButton = document.createElement("button");
+        readStatus = document.createElement("p");
+        readStatus.classList.add("book-pages");
+        readStatus.textContent = `${item.read}`;
+
+        removeButton = document.createElement("button");
         removeButton.setAttribute("id", "remove-btn");
         removeButton.textContent = "REMOVE";
 
-        const statusButton = document.createElement("button");
+        statusButton = document.createElement("button");
         statusButton.setAttribute("id", "status-btn");
-        statusButton.textContent = "I HAVE READ IT";
+        statusButton.textContent = "I HAVEN'T READ IT";
         //append to the card
         bookCard.append(bookTitle, bookAuthor, bookPagesNum, removeButton, statusButton);
         //append card to the library
@@ -70,6 +89,7 @@ submitBtn.addEventListener("click", (event) => {
     //
     submitBook();
 })
+
 // function to upload the book onto the card
 function submitBook() {
     // gather info
@@ -78,12 +98,14 @@ function submitBook() {
     let pages = document.getElementById("pages").value;
     // pass through constructor
     let book = new Book(title, author, pages);
+    // add and display
     addBooktoLibrary(book);
     displayBooks(library);
-    console.log(library);
 }
 
 // create function for remove button
-
-
-// create function for changing status button
+// doesn't work
+function removeBook() {
+    library.splice(1);
+}
+removeButton.addEventListener("click", removeBook(index));
